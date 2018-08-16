@@ -56,16 +56,18 @@ ClassName objectName = new Constructor();
 
 ```java
 public class JavaLearn {
-    public JavaLearn(){
+    JavaLearn(){
         // first constructor
     }
-    public JavaLearn(int myNumber){
+    JavaLearn(int myNumber){
         // second constructor with a parameter, myNumber.
     }
 }
 ```
 
 نکته: سازنده‌ی دوم دارای یک پارامتر است و مقداری را از نوع `int`با نام `myNumber` به عنوان پارامتر دریافت می‌کند. در بخش متدها با این موضوع بیشتر آشنا خواهید شد.
+
+**توجه کنید که سازنده‌ها همواره فاقد نوع هستند! در واقع حتی void نیز نیستند! همچنین یک متد سازنده هیچ مقداری را بر نمی‌گرداند!**
 
 ### دسترسی به متغیرهای نمونه و متدهای کلاس {#access-to-instance-variables-and-class-methods}
 
@@ -98,7 +100,7 @@ public class Dog {
     String breed = "bulldog";
     int age = 3;
     // constructor
-    public Dog(String name){
+    Dog(String name){
         System.out.println("your dog name is: " + name);
     }
     void eating(){
@@ -124,8 +126,8 @@ class Dog {
     String breed = "bulldog";
     int age = 3;
     // constructor
-    public Dog(String name){
-        Syetem.out.println("your dog name is: " + name);
+    Dog(String name){
+        System.out.println("your dog name is: " + name);
     }
     void eating(){
         System.out.println("Dog is eating");
@@ -186,7 +188,7 @@ my dog's color is: white
 
 کلمه‌ی کلیدی `this` برای استفاده از متغیرهای نمونه، متدها و یا سازنده‌های داخل کلاسی که در آن قرار داریم استفاده می‌شود. با استفاده از کلمه‌ی کلیدی `this` می‌توانیم اشاره‌ی خود را به عناصر داخل کلاس \(خارج از هر بلوک کدی\) محدود کنیم. برای فراخوانی عناصر داخل کلاس از طریق کلمه‌ی کلیدی this کافیست که ابتدا کلمه‌ی کلیدی this را قرار داده و پس از قرار دادن یک نقطه متغیر نمونه، متد و یا سازنده‌ی خود را صدا بزنیم.
 
- بیاید با یک مثال این موضوع را روشن‌تر کنیم:
+بیاید با یک مثال این موضوع را روشن‌تر کنیم:
 
 ```java
 class MyAgeClass {
@@ -205,7 +207,7 @@ public class Age {
 }
 ```
 
-در برنامه‌ی بالا - 
+در برنامه‌ی بالا -
 
 ابتدا یک کلاس با نام `MyAgeClass` ساختیم.
 
@@ -215,11 +217,9 @@ public class Age {
 
 همان‌طور که مشاهده می‌کنید درون متد `showAge` دو متد چاپ قرار داده شده است که اولی مقداری که به عنوان آرگومان به تابع `showAge` داده شده است  را چاپ می‌کند و دومین متد نیز متغیر نمونه‌ی `myAge` را چاپ می‌کند.
 
-حال در کلاس و متد اصلی برنامه یک شی از کلاس `MyAgeClass` می‌سازیم و سپس متد `showAge` را با مقدار `18` به عنوان آرگومان فراخوانی می‌کنیم. 
+حال در کلاس و متد اصلی برنامه یک شی از کلاس `MyAgeClass` می‌سازیم و سپس متد `showAge` را با مقدار `18` به عنوان آرگومان فراخوانی می‌کنیم.
 
-حال برنامه را کامپایل و اجرا می‌کنیم تا نتیجه را مشاهده کنیم: 
-
-
+حال برنامه را کامپایل و اجرا می‌کنیم تا نتیجه را مشاهده کنیم:
 
 ```
 ➜  /tmp javac Age.java
@@ -246,11 +246,47 @@ class MySubClass extends MySuperClass {
 }
 ```
 
-در مثال بالا کلاس `MySubClass` یک کلاس فرزند برای `MyClass` محسوب می‌شود.
+در مثال بالا کلاس `MySubClass` یک کلاس فرزند برای `MySuperClass` محسوب می‌شود.
+
+کلاس فرزند تمام پارامترهای کلاس اصلی را به ارث می‌برد همچنین به جز تعدادی معدود \(که در بخش اصلاح کننده‌ها متوجه آن‌ها خواهید شد.\)،  از کلاس فرزند می‌توان به تمام محتویات کلاس اصلی دسترسی داشت.
+
+کد زیر مثالی از یک کلاس پدر و فرزند است:
+
+```java
+class Calculation {
+    public int multiply(int firstNumber, int secondNumber){
+        return firstNumber * secondNumber;
+    }
+}
+class MyCalculation extends Calculation {
+    public int division(int firstNumber, int secondNumber){
+        return firstNumber / secondNumber;
+    }
+}
+
+public class Calculate {
+    public static void main(String []args){
+        MyCalculation testCalculate = new MyCalculation();
+        System.out.println(testCalculate.multiply(4, 5));
+        System.out.println(testCalculate.division(20, 4));
+    }
+}
+```
+
+نتیجه:
+
+```
+➜  /tmp javac Calculate.java
+➜  /tmp java Calculate      
+20
+5
+```
+
+
 
 ### کلمه‌ی کلیدی super
 
-کاربرد کلمه‌ی کلیدی super شبیه به کلمه‌ی کلیدی this است با این تفاوت که اعضای کلاس پدر را از کلاس فرزند تفکیک  می‌کند. در واقع می‌توان گفت هر زمان که بخواهیم در کلاس‌های فرزند، سازنده، متغیر و یا متدی را از کلاس اصلی فراخوانی کنیم از super استفاده می‌کنیم.  همچنین یکی از کاربردهای مهم super فراخوانی سازنده‌ی کلاس پدر از سازنده‌ی کلاس فرزند است. برای روشن‌تر شدن موضوع به مثال زیر توجه کنید:
+کاربرد کلمه‌ی کلیدی super شبیه به کلمه‌ی کلیدی this است با این تفاوت که اعضای کلاس پدر را از کلاس فرزند تفکیک  می‌کند. در واقع می‌توان گفت هر زمان که بخواهیم در کلاس‌های فرزند، سازنده، متغیر و یا متدی را از کلاس اصلی فراخوانی کنیم که دقیقا نام آن‌ها با نام یک متغیر، سازنده و یا متد در کلاس فرزند یکی باشد، از super استفاده می‌کنیم.  همچنین یکی از کاربردهای مهم super فراخوانی سازنده‌ی کلاس پدر از سازنده‌ی کلاس فرزند است. برای روشن‌تر شدن موضوع به مثال زیر توجه کنید:
 
 ```java
 class MySuperClass {
@@ -275,13 +311,110 @@ public class MyInharitance{
 برنامه‌ی بالا صرفا یک کلاس و یک فرزند از روی همان کلاس است که کار بسیار ساده‌ای می‌کند و منطق آن کاملا واضح است. اگر برنامه را کامپایل کنیم خروجی ای مانند این خواهیم داشت:
 
 ```
-➜  /tmp javac MyInharitance.java 
-➜  /tmp java MyInharitance 
-your number in first class is: 5
-your number in sub class is:6
+➜  /tmp javac MyInharitance.java
+➜  /tmp java MyInharitance      
+Hello From Sub Class
 ```
 
-در مثال بالا دو متغیر با نام `myNumber` و دو متد با نام `showMyNumber` مشاهده می‌کنید که یکی از هر کدام در کلاس اصلی یعنی `MySuperClass` و دومی نیز در کلاس فرزند یعنی `MySubClass` قرار گرفته است. حال فرض کنید در کلاس فرزند نیاز باشد متغیر `myNumber` مربوط به کلاس پدر را نیاز داشته باشید! در اینجاست که `super` به کارتان خواهد آمد! برنامه را به شکل زیر ویرایش می‌کنیم: 
+در مثال بالا دو متغیر با نام `myString` مشاهده می‌کنید که یکی از آن‌ها در داخل کلاس اصلی یعنی `MySuperClass` و دومی نیز در کلاس فرزند یعنی `MySubClass` قرار دارد. حال ما درون متد `showMyString` که در داخل کلاس فرزند واقع شده است، متد چاپ در جاوا را فراخوانی کردیم تا مقدار `myString`را مشاهده کنیم. حال فرض کنید به متغیر `myString` واقع در کلاس اصلی \(`MySuperClass`\) نیاز دارید. اینجاست که `super` به کار شما خواهد آمد!
+
+برای روشن شدن قضیه برنامه را به شکل زیر تغییر می‌دهیم:
+
+```java
+class MySuperClass {
+    String myString = "Hello From Super Class!";
+}
+
+class MySubClass extends MySuperClass {
+    String myString = "Hello From Sub Class";
+    void showMyString() {
+        System.out.println(super.myString);
+    }
+}
+
+public class MyInharitance{
+    public static void main(String []args){
+        MySubClass mySub = new MySubClass();
+        mySub.showMyString();
+    }
+}
+```
+
+حال در متد چاپ کلمه‌ی کلیدی `super` را اضافه کردیم، این به این معناست که به متغیر `myString` موجود در تابع پدر اشاره داریم.  نتیجه مطلوب است:
+
+```
+➜  /tmp javac MyInharitance.java 
+➜  /tmp java MyInharitance 
+Hello From Super Class!
+```
+
+همان‌طور که مشاهده می‌کنید متغیر واقع شده در کلاس پدر چاپ شد.
+
+کاربرد دیگر `super` فراخوانی متد سازنده‌ی کلاس اصلی در کلاس فرزند است. بدین ترتیب که هر گاه درون سازنده‌ی کلاس فرزند، متد `super()` را استفاده کنید، سازنده‌ی کلاس اصلی اجرا می‌شود! به مثال زیر دقت کنید:
+
+```java
+class MyClass {
+    MyClass() {
+        System.out.println("Hello from super class!");
+    }
+}
+class MySecondClass extends MyClass {
+    MySecondClass() {
+      super();
+      System.out.println("Hello From Sub Class!")  
+    }
+}
+
+public class MySuperTest {
+    public static void main(String []args){
+        MySecondClass myObject = new MySecondClass();
+    }
+}
+```
+
+### رابطه‌ی IS-A {#packages}
+
+در زبان جاوا IS-A نام یک مفهوم است که بیان می‌کند، این شی یک نوع از آن شی است! \(this object is a that object\) . برای روشن‌تر شدن موضوع نگاهی به کد زیر بیندازید:
+
+```java
+public class Car {
+}
+public class Mercedes extends Car{
+}
+public class Porsche extends car{
+}
+public class Panamera extends Porsche {
+}
+```
+
+در تکه کد بالا -- 
+
+کلاس `Mercedes` یک فرزند برای کلاس `Car` است.
+
+کلاس `Porsche` نیز یک فرزند برای کلاس `Car` است.
+
+کلاس `Panamera` یک فرزند برای کلاس `Porsche` محسوب می‌شود.
+
+کلاس `Panamera` فرزند هر دو کلاس `Car` و `Porsche` محسوب می‌شود.
+
+حال اگر بخواهیم با رابطه‌ی IS-A روابط بین این کلاس‌ها را بنویسم می‌توانیم به صورت زیر این کار را انجام دهیم:
+
+Mercedes IS-A Car
+
+Porsche IS-A Car
+
+Panamera IS-A Porsche
+
+Hence: Porsche IS-A Car as well
+
+
+
+در بحث وراثت باید به یاد داشته باشید که در جاوا یک کلاس نمی‌تواند بیشتر از یک کلاس دیگر را گسترش \(extend\) دهد! مثلا مثال زیر در زبان جاوا پذیرفته نیست:
+
+```java
+public class MyClass extends Mercedes, Porsche {
+}
+```
 
 ### بسته‌ها در جاوا {#packages}
 
