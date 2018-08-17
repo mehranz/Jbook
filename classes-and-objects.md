@@ -2,6 +2,8 @@
 
 مهم‌ترین ویژگی زبان جاوا، شی گرایی است. با استفاده از مفاهیم شی گرایی و عمل به آن‌ها می‌توانید همواره برنامه‌های تمیز، سازماندهی شده‌ و قدرت‌مندی بنویسید. دو مفهوم اصلی شی گرایی کلاس‌ها و اشیا هستند.
 
+مفاهیمی که در این بخش معرفی می‌شوند، برای عموم کاربران مفاهیم سخت و پیچیده‌ای محسوب می‌شوند. برای یادگیری کامل آن‌ها توصیه می‌شود پس از خواندن کتاب تمامی بخش‌هایی که آموختید را به خوبی تمرین کنید تا بتوانید به اصلی ترین مسائل جاوا مسلط شوید. همچنین تا کنون با مفاهیمی همچون متد آشنا نشده‌اید و تنها اسم آن‌را شنیده اید که به این‌گونه مفاهیم در بخش‌های بعد حتما پرداخته خواهد شد.
+
 ### کلاس‌ها {#classes}
 
 به طور خلاصه، کلاس‌‌ها را می‌توان مجموعه‌ای از رفتارها و ویژگی‌ها برای یک شی دانست، که می‌توان اشیاء را از روی آن‌ها ساخت. تمام اشیایی که که از روی یک کلاس ساخته می‌شوند ویژگی‌های همان کلاس را دارا هستند مگر این‌که پس از ساختن کلاس برخی از آن‌ها را که قابل تغییر هستند، تغییر دهید.
@@ -14,7 +16,7 @@
 
 ```java
 class Name {
-    // class contents
+// class contents
 }
 ```
 
@@ -28,7 +30,7 @@ class Name {
 
 **۳. متغیرهای کلاس** - متغیرهایی که درون یک کلاس و خارج از هر متدی ساخته می‌شوند و دارای کلید واژه‌ی `static` هستند.
 
-همچنین یک کلاس می‌تواند هر تعداد متد و به هر منظوری را درون خود جای دهد.
+همچنین یک کلاس می‌تواند هر تعداد متد را درون خود جای دهد.
 
 ### اشیاء {#objects}
 
@@ -42,7 +44,7 @@ class Name {
 
 **متد سازنده‌ی یک کلاس، همواره متدی با نامی دقیقا برابر با نام همان کلاس است.**
 
-در  ادامه سینتکس ساخت یک شی از روی یک کلاس را مشاهده خواهید کرد:
+در ادامه سینتکس ساخت یک شی از روی یک کلاس را مشاهده خواهید کرد:
 
 ```java
 ClassName objectName = new Constructor();
@@ -50,18 +52,18 @@ ClassName objectName = new Constructor();
 
 ### سازنده‌ها {#constructors}
 
-وقتی صحبت از کلاس‌ها و اشیا می‌کنیم یکی از مهم‌ترین مسائلی که در این مورد وجود دارد متد یا تابع سازنده \(constructor\) است که پیش از این نیز اسم آن را شنیده اید. تمامی کلاس‌ها در جاوا حداقل یک تابع سازنده دارند و حتی اگر آن را تعریف نکنیم نیز کامپایلر جاوا یک سازنده‌ی پیش‌فرض برای آن در نظر می‌گیرد.
+وقتی صحبت از کلاس‌ها و اشیا می‌کنیم یکی از مهم‌ترین مسائلی که در این مورد وجود دارد متد یا تابع سازنده \(constructor\) است که پیش از این نیز اسم آن را شنیده اید. تمامی کلاس‌ها در جاوا حداقل یک متد سازنده دارند و حتی اگر آن را تعریف نکنیم نیز کامپایلر جاوا یک سازنده‌ی پیش‌فرض برای آن در نظر می‌گیرد.
 
 هر بار که یک شی ایجاد می‌شود، حداقل یک سازنده فراخوانی می‌شود. قاعده‌ی اصلی سازنده‌ها این است که باید دقیقا هم نام با کلاس خود باشند. همچنین یک کلاس می‌تواند چندین سازنده نیز داشته باشد. در ادامه مثالی داریم از یک کلاس به همراه دو سازنده:
 
 ```java
 public class JavaLearn {
-    JavaLearn(){
-        // first constructor
-    }
-    JavaLearn(int myNumber){
-        // second constructor with a parameter, myNumber.
-    }
+JavaLearn(){
+// first constructor
+}
+JavaLearn(int myNumber){
+// second constructor with a parameter, myNumber.
+}
 }
 ```
 
@@ -95,87 +97,88 @@ objectName.variableName = Value;
 یک سگ را در نظر بگیرید. این سگ ویژگی‌هایی همچون نژاد، سن، رنگ و ... دارد. همچنین یک سگ می‌تواند شامل رفتارهایی همچون غذا خوردن، خوابیدن، دویدن و ... باشد. حال بیاید همین ویژگی‌ها و رفتارها را در قالب یک کلاس با عنوان `Dog` بنویسیم:
 
 ```java
+// dog class; you can save it as Dog.java
 public class Dog {
-    String color = "brown";
-    String breed = "bulldog";
-    int age = 3;
-    // constructor
-    Dog(String name){
-        System.out.println("your dog name is: " + name);
-    }
-    void eating(){
-        System.out.println("Dog is eating");
-    }
-    void sleeping(){
-        System.out.println("Dog is sleeping");
-    }
-    void running(){
-        System.out.println("Dog is running");
-    } 
+String color = "brown";
+String breed = "bulldog";
+int age = 3;
+// constructor
+Dog(String name){
+System.out.println("your dog name is: " + name);
+}
+void eating(){
+System.out.println("Dog is eating");
+}
+void sleeping(){
+System.out.println("Dog is sleeping");
+}
+void running(){
+System.out.println("Dog is running");
+}
 }
 ```
 
 حالا کلاسی برای یک سگ با ویژگی‌ها و رفتارهایی که ذکر شده داریم. برای استفاده از این کلاس دو راه داریم.
 
-اولین راه نوشتن کل کلاس در داخل فایل اصلی برنامه است و سپس ساخت شی از آن است. بدین صورت:
+اولین راه نوشتن کل کلاس در داخل فایل اصلی برنامه و سپس ساخت شی از آن است. بدین صورت:
 
 ```java
 // Dog Class
 class Dog {
-    String color = "brown";
-    String breed = "bulldog";
-    int age = 3;
-    // constructor
-    Dog(String name){
-        System.out.println("your dog name is: " + name);
-    }
-    void eating(){
-        System.out.println("Dog is eating");
-    }
-    void sleeping(){
-        System.out.println("Dog is sleeping");
-    }
-    void running(){
-        System.out.println("Dog is running");
-    } 
+String color = "brown";
+String breed = "bulldog";
+int age = 3;
+// constructor
+Dog(String name){
+System.out.println("your dog name is: " + name);
+}
+void eating(){
+System.out.println("Dog is eating");
+}
+void sleeping(){
+System.out.println("Dog is sleeping");
+}
+void running(){
+System.out.println("Dog is running");
+}
 }
 // the main class of program
 public class MyProgram {
-    public static void main(String []args){
-        Dog myDog = new Dog("Jessie");
-        myDog.eating();
-        myDog.color = "white";
-        myDog.sleeping();
-        System.out.println("my dog's color is: " + myDog.color);
-    }
+public static void main(String []args){
+Dog myDog = new Dog("Jessie");
+myDog.eating();
+myDog.color = "white";
+myDog.sleeping();
+System.out.println("my dog's color is: " + myDog.color);
+}
 }
 ```
 
-دقت کنید، هنگامی که به فایل اصلی برنامه‌ی خود به جز کلاس اصلی برنامه، یک کلاس دیگر اضافه می‌کنید \(مثل همین Dog\) نباید از کلید واژه‌ی public درون آن استفاده کنید.
+دقت کنید، هنگامی که به فایل اصلی برنامه‌ی خود به جز کلاس اصلی برنامه، یک کلاس دیگر اضافه می‌کنید \(مثل همین Dog\) نباید از کلید واژه‌ی `public` درون آن استفاده کنید. در واقع زمانی که کلاس خود را با کلید واژه‌ی `public` می‌سازید، باید نام آن، با نام فایل جاوا یکی باشد.
 
-راه دوم ذخیره کردن فایل کلاس به صورت جداگانه است. بدین صورت که ابتدا کلاس \`Dog\` را روی فایلی به نام Dog.java می‌نویسید. سپس فایل برنامه‌ي اصلی خود را مانند همیشه و با رعایت کردن قاعده‌ها نوشته و کارهای نظیر ساخت شی و استفاده از آن را درون فایل اصلی برنامه‌ی خود انجام می‌دهید.
+راه دوم ذخیره کردن فایل کلاس به صورت جداگانه است. بدین صورت که ابتدا کلاس `Dog` را روی فایلی به نام Dog.java می‌نویسید. سپس فایل برنامه‌ي اصلی خود را مانند همیشه و با رعایت کردن قاعده‌ها نوشته و کارهای نظیر ساخت شی و استفاده از آن را درون فایل اصلی برنامه‌ی خود انجام می‌دهید.
 
 با این روش فایل اصلی برنامه‌ی شما باید به صورت زیر باشد:
 
 ```java
 public class MyProgram {
-    public static void main(String []args){
-        Dog myDog = new Dog("Jessie");
-        myDog.eating();
-        myDog.color = "white";
-        myDog.sleeping();
-        System.out.println("my dog's color is: " + myDog.color);
-    }
+public static void main(String []args){
+Dog myDog = new Dog("Jessie");
+myDog.eating();
+myDog.color = "white";
+myDog.sleeping();
+System.out.println("my dog's color is: " + myDog.color);
+}
 }
 ```
 
-و همچنین  فایل کلاس \`Dog\` نیز دقیقا باید در مسیری که فایل اصلی برنامه‌ی خود را ساخته‌اید، وجود داشته باشد. و  دقت کنید که کلاس Dog حتما باید کلیدواژه‌ی public را داشته باشد.
+و همچنین فایل کلاس `Dog` نیز دقیقا باید در مسیری که فایل اصلی برنامه‌ی خود را ساخته‌اید، وجود داشته باشد. و دقت کنید که کلاس Dog حتما باید کلیدواژه‌ی public را داشته باشد.
 
 حال بیاید برنامه را کامپایل و اجرا کنیم:
 
 ```text
-➜  /tmp javac MyProgram.java 
-➜  /tmp java MyProgram 
+➜ /tmp javac MyProgram.java
+➜ /tmp java MyProgram
 your dog name is: Jessie
 Dog is eating
 Dog is sleeping
@@ -186,24 +189,24 @@ my dog's color is: white
 
 ### کلمه‌ی کلیدی this
 
-کلمه‌ی کلیدی `this` برای استفاده از متغیرهای نمونه، متدها و یا سازنده‌های داخل کلاسی که در آن قرار داریم استفاده می‌شود. با استفاده از کلمه‌ی کلیدی `this` می‌توانیم اشاره‌ی خود را به عناصر داخل کلاس \(خارج از هر بلوک کدی\) محدود کنیم. برای فراخوانی عناصر داخل کلاس از طریق کلمه‌ی کلیدی this کافیست که ابتدا کلمه‌ی کلیدی this را قرار داده و پس از قرار دادن یک نقطه متغیر نمونه، متد و یا سازنده‌ی خود را صدا بزنیم.
+کلمه‌ی کلیدی `this` برای استفاده از متغیرهای نمونه، متدها و یا سازنده‌های داخل کلاسی که در آن قرار داریم استفاده می‌شود. با استفاده از کلمه‌ی کلیدی `this` می‌توانیم اشاره‌ی خود را به عناصر داخل کلاس \(خارج از هر بلوک کدی\) محدود کنیم. برای فراخوانی عناصر داخل کلاس از طریق کلمه‌ی کلیدی `this` کافیست که ابتدا کلمه‌ی کلیدی `this` را قرار داده و پس از قرار دادن یک نقطه متغیر نمونه، متد و یا سازنده‌ی خود را صدا بزنیم.
 
 بیاید با یک مثال این موضوع را روشن‌تر کنیم:
 
 ```java
 class MyAgeClass {
-    int myAge = 19;
-    void showAge(int myAge) {
-        System.out.println("the method's argument for age is:‌ " + myAge);
-        System.out.println("the age from instance variable is: " + this.myAge);
-    }
+int myAge = 19;
+void showAge(int myAge) {
+System.out.println("the method's argument for age is:‌ " + myAge);
+System.out.println("the age from instance variable is: " + this.myAge);
+}
 }
 
 public class Age {
-    public static void main (String []args) {
-        MyAgeClass myAgeObject = new MyAgeClass();
-        myAgeObject.showAge(18);
-    }
+public static void main (String []args) {
+MyAgeClass myAgeObject = new MyAgeClass();
+myAgeObject.showAge(18);
+}
 }
 ```
 
@@ -215,15 +218,15 @@ public class Age {
 
 پس از آن متدی به نام `showAge` ساختیم که یک آرگومان از نوع int با نام `myAge` دریافت می‌کند. نکته‌ای که این‌جا وجود دارد این است که متغیر ‍`myAge` که متد `showAge` آن را به عنوان آرگومان می‌گیرد، هیچ ارتباطی به متغیر نمونه‌ی `myAge` ندارد و دقیقا کاربرد کلمه‌ی کلیدی `this` در همین موضوع است!
 
-همان‌طور که مشاهده می‌کنید درون متد `showAge` دو متد چاپ قرار داده شده است که اولی مقداری که به عنوان آرگومان به تابع `showAge` داده شده است  را چاپ می‌کند و دومین متد نیز متغیر نمونه‌ی `myAge` را چاپ می‌کند.
+همان‌طور که مشاهده می‌کنید درون متد `showAge` دو متد چاپ قرار داده شده است که اولی مقداری که به عنوان آرگومان به تابع `showAge` داده شده است را چاپ می‌کند و دومین متد نیز متغیر نمونه‌ی `myAge` را چاپ می‌کند.
 
 حال در کلاس و متد اصلی برنامه یک شی از کلاس `MyAgeClass` می‌سازیم و سپس متد `showAge` را با مقدار `18` به عنوان آرگومان فراخوانی می‌کنیم.
 
 حال برنامه را کامپایل و اجرا می‌کنیم تا نتیجه را مشاهده کنیم:
 
 ```
-➜  /tmp javac Age.java
-➜  /tmp java Age      
+➜ /tmp javac Age.java
+➜ /tmp java Age
 the method's argument for age is:‌ 18
 the age from instance variable is: 19
 ```
@@ -232,87 +235,92 @@ the age from instance variable is: 19
 
 ## وراثت
 
-یکی از مهم ترین مفاهیم شی گرایی در جاوا، مفهوم وراثت است. با استفاده از مفهوم وراثت، می‌توانید از روی یک کلاس، یک کلاس مجزای دیگر بسازید. در این حالت کلاس اصلی و اولیه، کلاس پدر\(اصطلاحا Super Class نیز گفته می‌شود.\)، و کلاسی که از روی کلاس پدر ساخته شده، کلاس فرزند \(Sub Class نیز گفته می‌شود.\) نام دارد. برای ساخت یک کلاس فرزند از روی یک کلاس، ابتدا باید کلید واژه‌ی `class` و نام کلاس فرزند را نوشته و سپس با کلید واژه‌ی `extends` کلاس پدر را مشخص کنید.
+یکی از مهم ترین مفاهیم شی گرایی در جاوا، مفهوم وراثت است. با استفاده از مفهوم وراثت، می‌توانید از روی یک کلاس، یک کلاس مجزای دیگر بسازید. در این حالت کلاس اصلی و اولیه، کلاس پدر یا کلاس اصلی\(اصطلاحا Super Class نیز گفته می‌شود.\) و کلاسی که از روی کلاس پدر ساخته شده، کلاس فرزند یا زیرشاخه \(Sub Class نیز گفته می‌شود.\) نام دارد. برای ساخت یک کلاس زیرشاخه از روی یک کلاس، ابتدا باید کلید واژه‌ی `class` و نام کلاس زیرشاخه را نوشته و سپس با کلید واژه‌ی `extends` کلاس اصلی را مشخص کنید.
 
 سینتکس وراثت در جاوا به صورت زیر است:
 
 ```java
 class MySuperClass {
-    // class contenets
+// class contenets
 }
 
 class MySubClass extends MySuperClass {
-    // class contents
+// class contents
 }
 ```
 
-در مثال بالا کلاس `MySubClass` یک کلاس فرزند برای `MySuperClass` محسوب می‌شود.
+در مثال بالا کلاس `MySubClass` یک کلاس زیرشاخه یا فرزند برای `MySuperClass` محسوب می‌شود.
 
-کلاس فرزند تمام پارامترهای کلاس اصلی را به ارث می‌برد همچنین به جز تعدادی معدود \(که در بخش اصلاح کننده‌ها متوجه آن‌ها خواهید شد.\)،  از کلاس فرزند می‌توان به تمام محتویات کلاس اصلی دسترسی داشت.
+کلاس فرزند تمام پارامترهای کلاس اصلی را به ارث می‌برد همچنین به جز تعدادی معدود \(که در بخش اصلاح کننده‌ها متوجه آن‌ها خواهید شد.\)، از کلاس فرزند می‌توان به تمام محتویات کلاس اصلی دسترسی داشت.
 
-کد زیر مثالی از یک کلاس پدر و فرزند است:
+کد زیر مثالی از یک کلاس اصلی و زیر شاخه است:
 
 ```java
 class Calculation {
-    public int multiply(int firstNumber, int secondNumber){
-        return firstNumber * secondNumber;
-    }
+public int multiply(int firstNumber, int secondNumber){
+return firstNumber * secondNumber;
+}
 }
 class MyCalculation extends Calculation {
-    public int division(int firstNumber, int secondNumber){
-        return firstNumber / secondNumber;
-    }
+public int division(int firstNumber, int secondNumber){
+return firstNumber / secondNumber;
+}
 }
 
 public class Calculate {
-    public static void main(String []args){
-        MyCalculation testCalculate = new MyCalculation();
-        System.out.println(testCalculate.multiply(4, 5));
-        System.out.println(testCalculate.division(20, 4));
-    }
+public static void main(String []args){
+MyCalculation testCalculate = new MyCalculation();
+System.out.println(testCalculate.multiply(4, 5));
+System.out.println(testCalculate.division(20, 4));
+}
 }
 ```
 
 نتیجه:
 
 ```
-➜  /tmp javac Calculate.java
-➜  /tmp java Calculate      
+➜ /tmp javac Calculate.java
+➜ /tmp java Calculate
 20
 5
 ```
 
+در بحث وراثت باید به یاد داشته باشید که در جاوا یک کلاس نمی‌تواند بیشتر از یک کلاس دیگر را گسترش \(extend\) دهد! مثلا مثال زیر در زبان جاوا پذیرفته نیست:
 
+```java
+public class MyClass extends Mercedes, Porsche {
+}
+```
 
 ### کلمه‌ی کلیدی super
 
-کاربرد کلمه‌ی کلیدی super شبیه به کلمه‌ی کلیدی this است با این تفاوت که اعضای کلاس پدر را از کلاس فرزند تفکیک  می‌کند. در واقع می‌توان گفت هر زمان که بخواهیم در کلاس‌های فرزند، سازنده، متغیر و یا متدی را از کلاس اصلی فراخوانی کنیم که دقیقا نام آن‌ها با نام یک متغیر، سازنده و یا متد در کلاس فرزند یکی باشد، از super استفاده می‌کنیم.  همچنین یکی از کاربردهای مهم super فراخوانی سازنده‌ی کلاس پدر از سازنده‌ی کلاس فرزند است. برای روشن‌تر شدن موضوع به مثال زیر توجه کنید:
+کاربرد کلمه‌ی کلیدی super شبیه به کلمه‌ی کلیدی this است با این تفاوت که اعضای کلاس اصلی را از کلاس زیرشاخه تفکیک می‌کند. در واقع می‌توان گفت هر زمان که بخواهیم در کلاس‌های فرزند، سازنده، متغیر و یا متدی را از کلاس اصلی فراخوانی کنیم که دقیقا نام آن‌ها با نام یک متغیر، سازنده و یا متد در کلاس فرزند یکی باشد، از super استفاده می‌کنیم. برای روشن‌تر شدن موضوع به مثال زیر توجه کنید:
 
 ```java
 class MySuperClass {
-    String myString = "Hello From Super Class!";
+String myString = "Hello From Super Class!";
 }
 
 class MySubClass extends MySuperClass {
-    String myString = "Hello From Sub Class";
-    void showMyString() {
-        System.out.println(myString);
-    }
+String myString = "Hello From Sub Class";
+void showMyString() {
+System.out.println(myString);
+}
 }
 
 public class MyInharitance{
-    public static void main(String []args){
-        MySubClass mySub = new MySubClass();
-        mySub.showMyString();
-    }
+public static void main(String []args){
+MySubClass mySub = new MySubClass();
+mySub.showMyString();
+}
 }
 ```
 
 برنامه‌ی بالا صرفا یک کلاس و یک فرزند از روی همان کلاس است که کار بسیار ساده‌ای می‌کند و منطق آن کاملا واضح است. اگر برنامه را کامپایل کنیم خروجی ای مانند این خواهیم داشت:
 
 ```
-➜  /tmp javac MyInharitance.java
-➜  /tmp java MyInharitance      
+➜ /tmp javac MyInharitance.java
+➜ /tmp java MyInharitance
 Hello From Sub Class
 ```
 
@@ -322,57 +330,66 @@ Hello From Sub Class
 
 ```java
 class MySuperClass {
-    String myString = "Hello From Super Class!";
+String myString = "Hello From Super Class!";
 }
 
 class MySubClass extends MySuperClass {
-    String myString = "Hello From Sub Class";
-    void showMyString() {
-        System.out.println(super.myString);
-    }
+String myString = "Hello From Sub Class";
+void showMyString() {
+System.out.println(super.myString);
+}
 }
 
 public class MyInharitance{
-    public static void main(String []args){
-        MySubClass mySub = new MySubClass();
-        mySub.showMyString();
-    }
+public static void main(String []args){
+MySubClass mySub = new MySubClass();
+mySub.showMyString();
+}
 }
 ```
 
-حال در متد چاپ کلمه‌ی کلیدی `super` را اضافه کردیم، این به این معناست که به متغیر `myString` موجود در تابع پدر اشاره داریم.  نتیجه مطلوب است:
+حال در متد چاپ کلمه‌ی کلیدی `super` را اضافه کردیم، این به این معناست که به متغیر `myString` موجود در تابع پدر اشاره داریم. نتیجه مطلوب است:
 
 ```
-➜  /tmp javac MyInharitance.java 
-➜  /tmp java MyInharitance 
+➜ /tmp javac MyInharitance.java
+➜ /tmp java MyInharitance
 Hello From Super Class!
 ```
 
 همان‌طور که مشاهده می‌کنید متغیر واقع شده در کلاس پدر چاپ شد.
 
-کاربرد دیگر `super` فراخوانی متد سازنده‌ی کلاس اصلی در کلاس فرزند است. بدین ترتیب که هر گاه درون سازنده‌ی کلاس فرزند، متد `super()` را استفاده کنید، سازنده‌ی کلاس اصلی اجرا می‌شود! به مثال زیر دقت کنید:
+همچنین یکی از کاربردهای مهم super فراخوانی سازنده‌ی کلاس اصلی از داخل سازنده‌ی کلاس زیرشاخه است. بدین ترتیب که هر گاه درون سازنده‌ی کلاس زیرشاخه، متد `super()` را استفاده کنید، سازنده‌ی کلاس اصلی اجرا می‌شود! به مثال زیر دقت کنید:
 
 ```java
 class MyClass {
-    MyClass() {
-        System.out.println("Hello from super class!");
-    }
+MyClass() {
+System.out.println("Hello from super class!");
+}
 }
 class MySecondClass extends MyClass {
-    MySecondClass() {
-      super();
-      System.out.println("Hello From Sub Class!")  
-    }
+MySecondClass() {
+super();
+System.out.println("Hello From Sub Class!");
+}
 }
 
 public class MySuperTest {
-    public static void main(String []args){
-        MySecondClass myObject = new MySecondClass();
-    }
+public static void main(String []args){
+MySecondClass myObject = new MySecondClass();
+}
 }
 ```
 
-### رابطه‌ی IS-A {#packages}
+در کد بالا، با توجه به متد `super()` ابتدا متد سازنده‌ی کلاس اصلی و سپس سایر پارامترهای متد سازنده‌ی کلاس زیرشاخه اجرا می‌شوند حال اگر برنامه را کامپایل کنیم نتیجه‌ای که انتظارش را داریم حاصل می‌شود:
+
+```
+➜ /tmp javac MySuperTest.java
+➜ /tmp java MySuperTest
+Hello from super class!
+Hello From Sub Class!
+```
+
+### رابطه‌ی IS-A
 
 در زبان جاوا IS-A نام یک مفهوم است که بیان می‌کند، این شی یک نوع از آن شی است! \(this object is a that object\) . برای روشن‌تر شدن موضوع نگاهی به کد زیر بیندازید:
 
@@ -387,36 +404,26 @@ public class Panamera extends Porsche {
 }
 ```
 
-در تکه کد بالا -- 
+در تکه کد بالا --
 
-کلاس `Mercedes` یک فرزند برای کلاس `Car` است.
+_کلاس `Mercedes` یک فرزند برای کلاس `Car` است._
 
-کلاس `Porsche` نیز یک فرزند برای کلاس `Car` است.
+_کلاس `Porsche` نیز یک فرزند برای کلاس `Car` است._
 
-کلاس `Panamera` یک فرزند برای کلاس `Porsche` محسوب می‌شود.
+_کلاس `Panamera` یک فرزند برای کلاس `Porsche` محسوب می‌شود._
 
-کلاس `Panamera` فرزند هر دو کلاس `Car` و `Porsche` محسوب می‌شود.
+_کلاس `Panamera` فرزند هر دو کلاس `Car` و `Porsche` محسوب می‌شود._
 
 حال اگر بخواهیم با رابطه‌ی IS-A روابط بین این کلاس‌ها را بنویسم می‌توانیم به صورت زیر این کار را انجام دهیم:
 
-Mercedes IS-A Car
+_Mercedes IS-A Car_
 
-Porsche IS-A Car
+_Porsche IS-A Car_
 
-Panamera IS-A Porsche
+_Panamera IS-A Porsche_
 
-Hence: Porsche IS-A Car as well
-
-
-
-در بحث وراثت باید به یاد داشته باشید که در جاوا یک کلاس نمی‌تواند بیشتر از یک کلاس دیگر را گسترش \(extend\) دهد! مثلا مثال زیر در زبان جاوا پذیرفته نیست:
-
-```java
-public class MyClass extends Mercedes, Porsche {
-}
-```
+_Hence: Porsche IS-A Car as well_
 
 ### بسته‌ها در جاوا {#packages}
 
-بسته‌ها یا پکیج‌ها در جاوا راهی برای سازماندهی کردن کلاس‌ها و رابط‌ها هستند. هنگام توسعه‌ی برنامه‌‌ها در جاوا ممکن است هزاران کلاس و رابط بنویسید، از این رو مرتب کردن و سازماندهی کردن آن‌ها می‌تواند به روند پیشرفت پروژه کمک شایانی کند و دسترسی به اجزای سورس برنامه نیز ساده‌تر باشد. این کار به کمک بسته‌ها امکان پذیر است.
-
+بسته‌ها یا پکیج‌ها در جاوا راهی برای سازماندهی کردن کلاس‌ها و رابط‌ها هستند. هنگام توسعه‌ی برنامه‌‌ها در جاوا ممکن است هزاران کلاس و رابط بنویسید، از این رو مرتب کردن و سازماندهی آن‌ها می‌تواند به روند پیشرفت پروژه کمک شایانی کند و دسترسی به اجزای سورس برنامه نیز ساده‌تر باشد. این کار به کمک بسته‌ها امکان پذیر است.
