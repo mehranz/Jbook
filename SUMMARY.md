@@ -8,6 +8,6 @@
 * [مسائل ابتدایی جاوا](basic-subjects.md)
 * [کلاس‌ها و اشیاء](classes-and-objects.md)
 * [متغیرها](variables.md)
-* [اصلاح کننده‌ها - کامل نشده](aslah-knndh-ha-kaml-nshdh.md)
-* [متدها - کامل نشده](mtdha.md)
+* [اصلاح کننده‌ها - کامل نشده](modifiers.md)
+* [متدها - کامل نشده](methods.md)
 
