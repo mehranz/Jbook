@@ -1,6 +1,6 @@
 # Table of contents
 
-* [بیا جاوا یاد بگیریم](README.md)
+* [بیا جاوا یاد بگیریم](book_README.md)
 * [مقدمه](introduction.md)
 * [نگاهی اجمالی به جاوا](overview.md)
 * [نصب کیت توسعه](install-jdk.md)
