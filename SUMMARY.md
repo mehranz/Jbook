@@ -9,4 +9,4 @@
 * [کلاس‌ها و اشیاء](classes-and-objects.md)
 * [متغیرها](variables.md)
 * [اصلاح کننده‌ها](modifiers.md)
-
+* [عملگرها](operators.md)
