@@ -10,3 +10,4 @@
 * [متغیرها](variables.md)
 * [اصلاح کننده‌ها](modifiers.md)
 * [عملگرها](operators.md)
+* [حلقه‌ها](loops.md)
