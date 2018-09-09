@@ -11,3 +11,4 @@
 * [اصلاح کننده‌ها](modifiers.md)
 * [عملگرها](operators.md)
 * [حلقه‌ها](loops.md)
+* [تصمیم گیری و شرط](if-condition.md)
